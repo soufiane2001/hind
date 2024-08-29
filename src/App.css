@@ -1,105 +1,195 @@
-body {
-  font-family: Arial, sans-serif;
+body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+/* Header styling */
 header {
-  background: #333;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
+  background: #004d99;
+  color: white;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-around;
+
+  align-items: center;
 }
 
 .logo {
-  width: 100px;
+  width: 60px;
   height: auto;
+}
+
+h1 {
+  font-size: 1.8em;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 10px;
+  margin: 0;
 }
 
 nav ul li a {
-  color: #fff;
   text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
-.container {
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
+nav ul li a:hover {
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
+/* Sections styling */
 section {
-  padding: 20px 0;
-  border-bottom: 1px solid #ccc;
+  padding: 80px 20px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  margin-top: 70px; /* space for fixed header */
 }
 
 h2 {
-  text-align: center;
-  color: #333;
-
-}
-.container p{
-  font-size: 22pt;
-}
-.container h2{
-  font-size: 25pt;
-}
-.service img{
-  width: 300px;
-}
-.service, .project {
-  text-align: center;
   margin-bottom: 20px;
-  border: 1px solid rgb(206, 206, 206);
+  font-size: 2.4em;
+  color: #004d99;
+  text-align: center;
 }
-.project p{
-  font-size: 14pt;
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  color: white;
+  background: #004d99;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s, transform 0.2s;
 }
-.service img, .project img, #about img {
-  width: 400px;
+
+.btn:hover {
+  background: #003366;
+  transform: scale(1.05);
+}
+
+.service, .project {
+  background: white;
+  width: 500px;
+  margin-left: 45px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.service img, .project img {
+  width: 100%;
   height: auto;
+  border-radius: 8px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.service h3, .project h3 {
+  margin-top: 10px;
+  color: #004d99;
+  font-size: 1.4em;
+}
+
+.project p {
+  margin: 15px 0;
+}
+
+/* About section */
+#about ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+  font-size: 1.1em;
+}
+
+#about li {
   margin-bottom: 10px;
 }
-#about ul li{
-  font-size: 21pt;
-  color: #525252;
-}
 
-#contact form {
+/* Contact form */
+form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-#contact input, #contact textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-#contact button {
-  padding: 10px;
-  background: #333;
-  color: #fff;
+form button {
+  padding: 12px 20px;
   border: none;
-  cursor: pointer;
+  color: white;
+  background: #004d99;
   border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
 }
 
+form button:hover {
+  background: #003366;
+  transform: scale(1.05);
+}
+
+/* Footer styling */
 footer {
-  background: #333;
-  color: #fff;
+  background: #004d99;
+  color: white;
   text-align: center;
-  padding: 10px 0;
+  padding: 15px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav ul {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+  }
+
+  .container {
+      flex-direction: column;
+      align-items: flex-start;
+  }
 }
